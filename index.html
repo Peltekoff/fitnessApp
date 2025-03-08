@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamified Health Challenges</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F7FFF7;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #FF6B6B;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #E25555;
+        }
+        .leaderboard {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .challenge-card {
+            background-color: #4ECDC4;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="dashboard" class="container">
+        <h1>Welcome, User!</h1>
+        <h2>Current Challenge: 10K Steps</h2>
+        <p>Progress: 70% completed</p>
+        <button class="button" onclick="showChallenges()">Pick a New Challenge</button>
+        
+        <div class="leaderboard">
+            <h3>Leaderboard</h3>
+            <ul>
+                <li>Alice - XP: 950</li>
+                <li>Bob - XP: 870</li>
+                <li>Charlie - XP: 780</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="challenges" class="container hidden">
+        <h2>Pick a Challenge</h2>
+        <div class="challenge-card">Challenge 1: Run 5KM</div>
+        <div class="challenge-card">Challenge 2: Do 50 Push-ups</div>
+        <div class="challenge-card">Challenge 3: Yoga for 30 min</div>
+        <button class="button" onclick="showDashboard()">Back to Dashboard</button>
+    </div>
+
+    <script>
+        function showChallenges() {
+            document.getElementById("dashboard").classList.add("hidden");
+            document.getElementById("challenges").classList.remove("hidden");
+        }
+
+        function showDashboard() {
+            document.getElementById("challenges").classList.add("hidden");
+            document.getElementById("dashboard").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
